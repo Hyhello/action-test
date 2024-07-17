@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Hyhello/action-test/compare/v1.0.0...v1.0.1) (2024-07-17)
+
+
+### Bug Fixes
+
+* Update CHANGELOG.md ([cb61770](https://github.com/Hyhello/action-test/commit/cb617703a1fc114de9454986396b6eb529d3e5d5))
+
 ## 1.11.0 (2024-07-17)
 
 
