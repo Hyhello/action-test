@@ -2,9 +2,9 @@
   "name": "code",
   "version": "1.0.0",
   "scripts": {
-    "lint": "echo: 'run lint'",
-    "test": "echo: 'run test'",
-    "build": "echo: 'run build'",
-    "build:docs": "echo: 'run build:docs'"
+    "lint": "console.log('run lint')",
+    "test": "console.log('run test')",
+    "build": "console.log('run build')",
+    "build:docs": "console.log('run build:docs')"
   }
 }
