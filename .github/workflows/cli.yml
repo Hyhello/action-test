@@ -3,22 +3,34 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  pull-requests: write
-
-name: release-please
-
 jobs:
-  release-please:
+  Test_Build:
+    name: "Test & Build"
     runs-on: ubuntu-latest
     steps:
-      - uses: googleapis/release-please-action@v4
+      - name: Checkout code
+        uses: actions/checkout@master
         with:
-          # this assumes that you have created a personal access token
-          # (PAT) and configured it as a GitHub action secret named
-          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # this is a built-in strategy in release-please, see "Action Inputs"
-          # for more options
-          release-type: node
+          fetch-depth: 0 # Fetch all tags
+
+      - name: "setup node"
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 16.x
+          cache-dependency-path: 'yarn.lock'
+
+      - run: 'yarn install --frozen-lockfile'
+      - run: 'yarn lint'
+      - run: 'yarn test'
+      - run: 'yarn build'
+      - run: 'yarn build:docs'
+      
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
