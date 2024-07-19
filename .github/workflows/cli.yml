@@ -16,9 +16,9 @@ jobs:
       - name: "setup node"
         uses: actions/setup-node@v3
         with:
-      #    cache: 'yarn'
+          cache: 'yarn'
           node-version: 16.x
-      #    cache-dependency-path: 'yarn.lock'
+          cache-dependency-path: 'yarn.lock'
 
       #- run: 'npm install'
       #- run: 'yarn install --frozen-lockfile'
