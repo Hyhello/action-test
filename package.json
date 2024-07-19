@@ -1,4 +1,10 @@
 {
   "name": "code",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "echo: 'run lint'",
+    "test": "echo: 'run test'",
+    "build": "echo: 'run build'",
+    "build:docs": "echo: 'run build:docs'"
+  }
 }
