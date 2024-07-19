@@ -16,16 +16,16 @@ jobs:
       - name: "setup node"
         uses: actions/setup-node@v3
         with:
-          cache: 'yarn'
+      #    cache: 'yarn'
           node-version: 16.x
       #    cache-dependency-path: 'yarn.lock'
 
       #- run: 'npm install'
       #- run: 'yarn install --frozen-lockfile'
-      - run: 'yarn lint'
-      - run: 'yarn test'
-      - run: 'yarn build'
-      - run: 'yarn build:docs'
+      - run: 'npm run lint'
+      - run: 'npm run test'
+      - run: 'npm run build'
+      - run: 'npm run build:docs'
       - run: 'node ./make.js'
       
       - name: Get changed files
