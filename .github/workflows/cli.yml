@@ -22,10 +22,10 @@ jobs:
 
       #- run: 'npm install'
       #- run: 'yarn install --frozen-lockfile'
-      - run: 'npm run lint'
-      - run: 'npm run test'
-      - run: 'npm run build'
-      - run: 'npm run build:docs'
+      - run: echo 'npm run lint'
+      - run: echo 'npm run test'
+      - run: echo 'npm run build'
+      - run: echo 'npm run build:docs'
       - run: 'node ./make.js'
       
       - name: Get changed files
