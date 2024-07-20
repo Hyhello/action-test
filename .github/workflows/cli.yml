@@ -14,36 +14,11 @@ jobs:
             fetch-depth: 0 # Fetch all tags
         - name: Build Changelog
           id: github_release
-          uses: mikepenz/release-changelog-builder-action@v4
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          uses: TriPSs/conventional-changelog-action@v5
           with:
-            commitMode: true
-            configurationJson: |
-              {
-                "template": "#{{CHANGELOG}}",
-                "categories": [
-                  {
-                      "title": "## Feature",
-                      "labels": ["feat", "feature"]
-                  },
-                  {
-                      "title": "## Fix",
-                      "labels": ["fix", "bug"]
-                  },
-                  {
-                      "title": "## Other",
-                      "labels": []
-                  }
-                ],
-                "label_extractor": [
-                  {
-                    "pattern": "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test){1}(\\([\\w\\-\\.]+\\))?(!)?: ([\\w ])+([\\s\\S]*)",
-                    "target": "$1"
-                  }
-                ],
-              }
-  
+            github-token: ${{ secrets.GITHUB_TOKEN }},
+            preset: 'angular'
+            
         - name: Create Release
           uses: softprops/action-gh-release@v2
           with:
