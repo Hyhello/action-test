@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/Hyhello/action-test/compare/v1.0.1...v1.0.2) (2024-07-20)
+
+
+### Bug Fixes
+
+* Update cli.yml ([69c04f2](https://github.com/Hyhello/action-test/commit/69c04f2f5d03a01aa12a379822242afd70bb72e7))
+
+
+
 ## [1.0.1](https://github.com/Hyhello/action-test/compare/v1.6.3...v1.0.1) (2024-07-20)
 
 
@@ -31,16 +40,6 @@
 ### Bug Fixes
 
 * Update cli.yml ([d067dcc](https://github.com/Hyhello/action-test/commit/d067dcc186f711c47de1509397bdcde60cf3c07b))
-
-
-
-# [1.6.0](https://github.com/Hyhello/action-test/compare/v1.5.0...v1.6.0) (2024-07-19)
-
-
-### Bug Fixes
-
-* Update cli.yml ([30ef577](https://github.com/Hyhello/action-test/commit/30ef577a6d6f042624bb88cecdbae11b6d04c5bc))
-* Update cli.yml ([5e02102](https://github.com/Hyhello/action-test/commit/5e02102610702cc94eca06c7333ffe98ee073995))
 
 
 
