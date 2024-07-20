@@ -15,9 +15,6 @@ jobs:
         - name: Build Changelog
           id: github_release
           uses: TriPSs/conventional-changelog-action@v5
-          with:
-            github-token: ${{ secrets.GITHUB_TOKEN }},
-            preset: 'angular'
             
         - name: Create Release
           uses: softprops/action-gh-release@v2
