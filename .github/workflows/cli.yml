@@ -26,7 +26,7 @@ jobs:
           
       - name: Get Changelog
         run: |
-          echo "${{ steps.changelog_reader.outputs.output-text }}"
+          echo "${{ steps.changelog_reader.outputs.changes }}"
       
 #      - name: Create Release
 #        uses: actions/create-release@v1
