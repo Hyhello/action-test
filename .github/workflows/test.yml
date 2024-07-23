@@ -1,4 +1,4 @@
-name: Test
+name: Unit Test
 
 on:
   push:
@@ -14,14 +14,9 @@ jobs:
   test:
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
-        node:
-          - 16
+        node: [12, 14, 16, 18, 20]
 
-    runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} (Node v${{ matrix.node }})
-
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
