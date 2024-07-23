@@ -12,9 +12,12 @@ jobs:
           uses: actions/checkout@master
           with:
             fetch-depth: 0 # Fetch all tags
-        - name: "✏️ Generate release changelog"
+        - name: Create changelog text
           id: changelog
-          uses: heinrichreimer/action-github-changelog-generator@v2.3
+          uses: loopwerk/tag-changelog@v1
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            exclude_types: other,doc,chore
 
         - run: echo "${{steps.changelog.outputs.changelog}}"
         
