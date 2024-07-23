@@ -15,7 +15,9 @@ jobs:
         - name: "✏️ Generate release changelog"
           id: github_release
           uses: heinrichreimer/action-github-changelog-generator@v2.3
-            
+
+        - run: echo "${{steps.changelog.outputs.changelog}}"
+        
         - name: Create Release
           uses: actions/create-release@v1
           if: ${{ steps.changelog.outputs.skipped == 'false' }}
