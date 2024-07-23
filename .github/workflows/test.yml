@@ -1,11 +1,7 @@
 name: Unit Test
 
 on:
-  push:
-    branches:
-      - '**'
-    tags:
-      - 'v*'
+  workflow_call:
 
 permissions:
   contents: read
