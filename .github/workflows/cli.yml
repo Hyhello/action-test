@@ -19,14 +19,17 @@ jobs:
 
       - name: Get Changelog Entry
         id: changelog_reader
-        uses: mindsers/changelog-reader-action@v2
+        uses: dahlia/submark@0.3.1
         with:
-          validation_level: warn
-          path: ./CHANGELOG.md
+          input-file: CHANGELOG.md
+          heading-level: 2
+          heading-title-text: version ${{ github.ref_name }}
+          ignore-case: true
+          omit-heading: true
 
       - name: Get Changelog
         run: |
-          echo "${{ steps.changelog_reader.outputs.changes }}"
+          echo "${{ steps.changelog_reader.outputs.output-text }}"
       
 #      - name: Create Release
 #        uses: actions/create-release@v1
