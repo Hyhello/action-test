@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - "**"
 
 jobs:
   test:
@@ -12,12 +12,6 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Get version from tag
-        id: tag_name
-        run: |
-          echo "current_version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-        shell: bash
-        
       - name: Checkout code
         uses: actions/checkout@master
         with:
@@ -28,7 +22,6 @@ jobs:
         uses: mindsers/changelog-reader-action@v2
         with:
           validation_level: warn
-          version: ${{ steps.tag_name.outputs.current_version }}
           path: ./CHANGELOG.md
 
       - name: Get Changelog
