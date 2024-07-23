@@ -13,26 +13,34 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: Get version from tag
+        id: tag_name
+        run: |
+          echo "current_version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        shell: bash
+        
       - name: Checkout code
         uses: actions/checkout@master
         with:
           fetch-depth: 0 # Fetch all tags
 
-      - name: Create changelog text
-        id: changelog
-        uses: loopwerk/tag-changelog@v1
+      - name: Get Changelog Entry
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          exclude_types: other,doc,chore
+          validation_level: warn
+          version: ${{ steps.tag_name.outputs.current_version }}
+          path: ./CHANGELOG.md
 
-      - run: echo "${{steps.changelog.outputs.changelog}}"
+      - name: Get Changelog
+        run: |
+          echo "${{ steps.changelog_reader.outputs.changes }}"
       
-      - name: Create Release
-        uses: actions/create-release@v1
-        if: ${{ steps.changelog.outputs.skipped == 'false' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          tag_name: ${{ steps.changelog.outputs.tag }}
-          release_name: ${{ steps.changelog.outputs.tag }}
-          body: ${{ steps.changelog.outputs.clean_changelog }}
+#      - name: Create Release
+#        uses: actions/create-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.github_token }}
+#        with:
+#          tag_name: ${{ steps.changelog.outputs.tag }}
+#          release_name: ${{ steps.changelog.outputs.tag }}
+#          body: ${{ steps.changelog.outputs.clean_changelog }}
