@@ -22,7 +22,7 @@
         "lib"
     ],
     "scripts": {
-        "test": "console.log('test')",
+        "test": "jest",
         "release": "release-it",
         "gc": "bash scripts/gc.sh",
         "prepare": "husky install",
