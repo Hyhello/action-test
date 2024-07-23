@@ -12,9 +12,9 @@ jobs:
           uses: actions/checkout@master
           with:
             fetch-depth: 0 # Fetch all tags
-        - name: Build Changelog
+        - name: "✏️ Generate release changelog"
           id: github_release
-          uses: TriPSs/conventional-changelog-action@v5
+          uses: heinrichreimer/action-github-changelog-generator@v2.3
             
         - name: Create Release
           uses: actions/create-release@v1
