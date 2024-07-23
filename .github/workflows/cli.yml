@@ -17,11 +17,12 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all tags
 
-      - name: Extract tag from the changelog
-        uses: denisa/clq-action@v1
+      - name: Get Changelog Entry
         id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
         with:
-          mode: release
+          validation_level: warn
+          path: ./CHANGELOG.md
 
       - name: Get Changelog
         run: |
