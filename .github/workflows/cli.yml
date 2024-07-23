@@ -21,6 +21,8 @@ jobs:
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
         with:
+          validation_level: warn
+          version: 1.12.0
           path: ./CHANGELOG.md
 
       - name: Get Changelog
