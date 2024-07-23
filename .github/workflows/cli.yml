@@ -13,7 +13,7 @@ jobs:
           with:
             fetch-depth: 0 # Fetch all tags
         - name: "✏️ Generate release changelog"
-          id: github_release
+          id: changelog
           uses: heinrichreimer/action-github-changelog-generator@v2.3
 
         - run: echo "${{steps.changelog.outputs.changelog}}"
