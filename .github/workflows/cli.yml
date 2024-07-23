@@ -19,7 +19,7 @@ jobs:
 
       - name: Get Changelog Entry
         id: changelog_reader
-        uses: dahlia/submark@0.3.1
+        uses: dahlia/submark@0.3.1/setup
         with:
           input-file: CHANGELOG.md
           heading-level: 2
