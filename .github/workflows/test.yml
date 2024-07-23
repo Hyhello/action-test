@@ -1,6 +1,11 @@
-name: Public Unit Test
+name: Unit Test
 
 on:
+  push:
+    branches-ignore:
+      - master
+    branches:
+      - "**"
   workflow_call:
 
 permissions:
