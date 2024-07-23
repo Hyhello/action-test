@@ -1,234 +1,161 @@
 # 更新日志
 
-## [1.1.1] - 2023-03-05
-
-### Added
-
-- Arabic translation (#444).
-- v1.1 French translation.
-- v1.1 Dutch translation (#371).
-- v1.1 Russian translation (#410).
-- v1.1 Japanese translation (#363).
-- v1.1 Norwegian Bokmål translation (#383).
-- v1.1 "Inconsistent Changes" Turkish translation (#347).
-- Default to most recent versions available for each languages.
-- Display count of available translations (26 to date!).
-- Centralize all links into `/data/links.json` so they can be updated easily.
-
-### Fixed
-
-- Improve French translation (#377).
-- Improve id-ID translation (#416).
-- Improve Persian translation (#457).
-- Improve Russian translation (#408).
-- Improve Swedish title (#419).
-- Improve zh-CN translation (#359).
-- Improve French translation (#357).
-- Improve zh-TW translation (#360, #355).
-- Improve Spanish (es-ES) transltion (#362).
-- Foldout menu in Dutch translation (#371).
-- Missing periods at the end of each change (#451).
-- Fix missing logo in 1.1 pages.
-- Display notice when translation isn't for most recent version.
-- Various broken links, page versions, and indentations.
-
-### Changed
-
-- Upgrade dependencies: Ruby 3.2.1, Middleman, etc.
-
-### Removed
-
-- Unused normalize.css file.
-- Identical links assigned in each translation file.
-- Duplicate index file for the english version.
-
-## [1.1.0] - 2019-02-15
+## [1.12.0](https://github.com/Hyhello/utils/compare/1.11.0...1.12.0) (2024-07-18)
 
-### Added
-
-- Danish translation (#297).
-- Georgian translation from (#337).
-- Changelog inconsistency section in Bad Practices.
 
-### Fixed
+### Features
 
-- Italian translation (#332).
-- Indonesian translation (#336).
+* support Tree Shaking ([61b0a95](https://github.com/Hyhello/utils/commit/61b0a951951a060ffb8b1349333fde9bd74ff026))
 
-## [1.0.0] - 2017-06-20
+## [1.11.0](https://github.com/Hyhello/utils/compare/1.10.0...1.11.0) (2024-06-07)
 
-### Added
 
-- New visual identity by [@tylerfortune8](https://github.com/tylerfortune8).
-- Version navigation.
-- Links to latest released version in previous versions.
-- "Why keep a changelog?" section.
-- "Who needs a changelog?" section.
-- "How do I make a changelog?" section.
-- "Frequently Asked Questions" section.
-- New "Guiding Principles" sub-section to "How do I make a changelog?".
-- Simplified and Traditional Chinese translations from [@tianshuo](https://github.com/tianshuo).
-- German translation from [@mpbzh](https://github.com/mpbzh) & [@Art4](https://github.com/Art4).
-- Italian translation from [@azkidenz](https://github.com/azkidenz).
-- Swedish translation from [@magol](https://github.com/magol).
-- Turkish translation from [@emreerkan](https://github.com/emreerkan).
-- French translation from [@zapashcanon](https://github.com/zapashcanon).
-- Brazilian Portuguese translation from [@Webysther](https://github.com/Webysther).
-- Polish translation from [@amielucha](https://github.com/amielucha) & [@m-aciek](https://github.com/m-aciek).
-- Russian translation from [@aishek](https://github.com/aishek).
-- Czech translation from [@h4vry](https://github.com/h4vry).
-- Slovak translation from [@jkostolansky](https://github.com/jkostolansky).
-- Korean translation from [@pierceh89](https://github.com/pierceh89).
-- Croatian translation from [@porx](https://github.com/porx).
-- Persian translation from [@Hameds](https://github.com/Hameds).
-- Ukrainian translation from [@osadchyi-s](https://github.com/osadchyi-s).
+### Bug Fixes
 
-### Changed
+* 修复isTel校验0xxxxxxxxxxx/0xxxxxxxxx等无法校验通过问题 ([9f22973](https://github.com/Hyhello/utils/commit/9f22973ccfb4c95d93060294c1e1752944345ef7))
 
-- Start using "changelog" over "change log" since it's the common usage.
-- Start versioning based on the current English version at 0.3.0 to help
-  translation authors keep things up-to-date.
-- Rewrite "What makes unicorns cry?" section.
-- Rewrite "Ignoring Deprecations" sub-section to clarify the ideal
-  scenario.
-- Improve "Commit log diffs" sub-section to further argument against
-  them.
-- Merge "Why can’t people just use a git log diff?" with "Commit log
-  diffs".
-- Fix typos in Simplified Chinese and Traditional Chinese translations.
-- Fix typos in Brazilian Portuguese translation.
-- Fix typos in Turkish translation.
-- Fix typos in Czech translation.
-- Fix typos in Swedish translation.
-- Improve phrasing in French translation.
-- Fix phrasing and spelling in German translation.
 
-### Removed
+### Features
 
-- Section about "changelog" vs "CHANGELOG".
+* 新增获取文件扩展名getFileExt ([cd78e18](https://github.com/Hyhello/utils/commit/cd78e18bdb19b0a5b00eee8c107d905c5ba757cf))
 
-## [0.3.0] - 2015-12-03
+## [1.10.0](https://github.com/Hyhello/utils/compare/1.9.1...1.10.0) (2024-05-11)
 
-### Added
 
-- RU translation from [@aishek](https://github.com/aishek).
-- pt-BR translation from [@tallesl](https://github.com/tallesl).
-- es-ES translation from [@ZeliosAriex](https://github.com/ZeliosAriex).
+### Bug Fixes
 
-## [0.2.0] - 2015-10-06
+* 调整isFunction判定，去掉不必要的判定 ([e736a62](https://github.com/Hyhello/utils/commit/e736a628576fc990e8a406436f0cad295f5ea462))
+* 修复isNumber 判定没有包含NaN，Infinity问题 ([12f0a93](https://github.com/Hyhello/utils/commit/12f0a93f7b095c09975f2d93b1f979000e3b260a))
+* 修正部分函数类型问题，完善类型缩小 ([de82800](https://github.com/Hyhello/utils/commit/de8280034be0a23841654c34e908c2ac31d95db4))
+* 优化isInteger函数实现 ([9e729cd](https://github.com/Hyhello/utils/commit/9e729cd3e78aeee94ca4c186e93020b9bd630eb6))
+* 优化toFixed实现 ([153ed83](https://github.com/Hyhello/utils/commit/153ed839e2057f0f0bea4b7bcb3d5305c33f9c19))
+* Dom分类下所有方法去除isBrowser判定，此处有些多余，并优化部分类型，使类型更精准 ([9c2ad6a](https://github.com/Hyhello/utils/commit/9c2ad6a19ba4c1913d4d8908d7f00026bbda1a4a))
 
-### Changed
 
-- Remove exclusionary mentions of "open source" since this project can
-  benefit both "open" and "closed" source projects equally.
+### Features
 
-## [0.1.0] - 2015-10-06
+* after、before添加context参数 ([b7cb549](https://github.com/Hyhello/utils/commit/b7cb54991dd7f39066e21b061cfb32865cf7c94a))
+* deepClone 添加对Set、Map、WeakMap 深度复制 ([d95d133](https://github.com/Hyhello/utils/commit/d95d133b165ec10e3e7d7f37651ec0c5ad511bd2))
 
-### Added
+## [1.9.1](https://github.com/Hyhello/utils/compare/1.9.0...1.9.1) (2023-09-08)
 
-- Answer "Should you ever rewrite a change log?".
 
-### Changed
+### Bug Fixes
 
-- Improve argument against commit logs.
-- Start following [SemVer](https://semver.org) properly.
+* 修复cookie.get获取问题，如token匹配到third-token中的token ([c8a247a](https://github.com/Hyhello/utils/commit/c8a247a125e691941da17da23ad3711a02d884a4))
 
-## [0.0.8] - 2015-02-17
+## 1.9.0 (2023-05-27)
 
-### Changed
 
-- Update year to match in every README example.
-- Reluctantly stop making fun of Brits only, since most of the world
-  writes dates in a strange way.
+### Bug Fixes
 
-### Fixed
+* 优化isUrl正则表达式 ([ad4088a](https://github.com/Hyhello/utils/commit/ad4088a269268f7ff81f11fa65997bae01d13422))
 
-- Fix typos in recent README changes.
-- Update outdated unreleased diff link.
+### Features
 
-## [0.0.7] - 2015-02-16
+* 新增cacheFn方法. ([b6bf1af](https://github.com/Hyhello/utils/commit/b6bf1afe5f020a7f39147ef2f3f1fd8d7b3e651e))
+* 新增download方法. ([3eec802](https://github.com/Hyhello/utils/commit/3eec8025ad0c101d369d67c3a9cfc7370d23c8e0))
+* on、off、once添加第三个参数options，实现多事件绑定。 ([ad31ef1](https://github.com/Hyhello/utils/commit/ad31ef1f293b94e64ac44f5ffc9765d1d041b023))
 
-### Added
+## [1.8.1](https://github.com/Hyhello/utils/compare/1.8.0...1.8.1) (2022-11-27)
 
-- Link, and make it obvious that date format is ISO 8601.
 
-### Changed
+### Bug Fixes
 
-- Clarified the section on "Is there a standard change log format?".
+* 修复cookie.set方法设置时长失效问题 ([00f720f](https://github.com/Hyhello/utils/commit/00f720fd697f6f8c4fceaaaee582e90eef76a1c8))
 
-### Fixed
+## [1.8.0](https://github.com/Hyhello/utils/compare/1.7.0...1.8.0) (2022-11-26)
 
-- Fix Markdown links to tag comparison URL with footnote-style links.
 
-## [0.0.6] - 2014-12-12
+### Bug Fixes
 
-### Added
+* 修复split函数浮点数格式化达不到预期问题。 ([d0257d8](https://github.com/Hyhello/utils/commit/d0257d89b4d7331e1b9f5ca9e66e81513903f281))
 
-- README section on "yanked" releases.
 
-## [0.0.5] - 2014-08-09
+### Features
 
-### Added
+* 分类Date新增beautifyTime方法。 ([ec22e25](https://github.com/Hyhello/utils/commit/ec22e25ab1f62b524ef25b91d35243b05b454669))
+* 分类Math新增padZero方法。 ([459be7f](https://github.com/Hyhello/utils/commit/459be7fa3b2a42372fcb773d65eda310d9f9959a))
 
-- Markdown links to version tags on release headings.
-- Unreleased section to gather unreleased changes and encourage note
-  keeping prior to releases.
+## [1.7.0](https://github.com/Hyhello/utils/compare/1.6.0...1.7.0) (2022-11-24)
 
-## [0.0.4] - 2014-08-09
 
-### Added
+### Bug Fixes
 
-- Better explanation of the difference between the file ("CHANGELOG")
-  and its function "the change log".
+* 分类Array新增flatten扁平化函数添加depth参数 ([0dd3e1c](https://github.com/Hyhello/utils/commit/0dd3e1c97759d135010dcce1d190749dac52309a))
 
-### Changed
 
-- Refer to a "change log" instead of a "CHANGELOG" throughout the site
-  to differentiate between the file and the purpose of the file — the
-  logging of changes.
+### Features
 
-### Removed
+* 分类Array新增flatten扁平化函数 ([42a3e62](https://github.com/Hyhello/utils/commit/42a3e625c1755d0721ea50cbd5796e8d28a39a0a))
+* 分类Math新增inRange方法。 ([e25be1c](https://github.com/Hyhello/utils/commit/e25be1c318c90029e64b53de51a69dfa375d7ad6))
 
-- Remove empty sections from CHANGELOG, they occupy too much space and
-  create too much noise in the file. People will have to assume that the
-  missing sections were intentionally left out because they contained no
-  notable changes.
+## [1.6.0](https://github.com/Hyhello/utils/compare/1.5.0...1.6.0) (2022-10-27)
 
-## [0.0.3] - 2014-08-09
 
-### Added
+### Bug Fixes
 
-- "Why should I care?" section mentioning The Changelog podcast.
+* 修复Set方法返回值问题 ([7ebffa2](https://github.com/Hyhello/utils/commit/7ebffa22e3217923b83a7b821406899d2acb523b))
 
-## [0.0.2] - 2014-07-10
 
-### Added
+### Features
 
-- Explanation of the recommended reverse chronological release ordering.
+* Function 分类新增 pipe 方法 ([c1f3837](https://github.com/Hyhello/utils/commit/c1f38373e3640f03a8501df50432e04926bbbfee))
+* Function 分类新增 curry 方法 ([b5e6971](https://github.com/Hyhello/utils/commit/b5e6971e95e694fcc54ca4d9e4fe2b19381a2885))
 
-## [0.0.1] - 2014-05-31
+## [1.5.0](https://github.com/Hyhello/utils/compare/1.4.0...1.5.0) (2022-06-26)
 
-### Added
 
-- This CHANGELOG file to hopefully serve as an evolving example of a
-  standardized open source project CHANGELOG.
-- CNAME file to enable GitHub Pages custom domain.
-- README now contains answers to common questions about CHANGELOGs.
-- Good examples and basic guidelines, including proper date formatting.
-- Counter-examples: "What makes unicorns cry?".
+### Features
 
-[unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.1...HEAD
-[1.1.1]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.3.0...v1.0.0
-[0.3.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.8...v0.1.0
-[0.0.8]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.7...v0.0.8
-[0.0.7]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.6...v0.0.7
-[0.0.6]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.5...v0.0.6
-[0.0.5]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.4...v0.0.5
-[0.0.4]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.3...v0.0.4
-[0.0.3]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.2...v0.0.3
-[0.0.2]: https://github.com/olivierlacan/keep-a-changelog/compare/v0.0.1...v0.0.2
-[0.0.1]: https://github.com/olivierlacan/keep-a-changelog/releases/tag/v0.0.1
+* Dom 分类新增 getStyle、setStyle方法 ([c8fbbc1](https://github.com/Hyhello/utils/commit/c8fbbc16377b084381dd2e7ebf4e885519e88942))
+* Store 分类 cookie 新增 remove方法 ([e31cd5e](https://github.com/Hyhello/utils/commit/e31cd5ed0fbbc6fa9c7b114f5231c060a3a224ad))
+* String 分类新增 kebabCase方法 ([e292063](https://github.com/Hyhello/utils/commit/e292063945d43505b2efb8cfae39e611bcaa95b5))
+
+## [1.4.0](https://github.com/Hyhello/utils/compare/1.3.3...1.4.0) (2022-06-24)
+
+
+### Features
+
+* store 添加remove方法，废弃clear方法 ([5106b5f](https://github.com/Hyhello/utils/commit/5106b5f16bb9ad2259f8f51d326bd59ea470a662))
+
+## [1.3.3](https://github.com/Hyhello/utils/compare/1.3.2...1.3.3) (2022-05-18)
+
+
+### Bug Fixes
+
+* 修复toFixed在纯数字200等情况下会转换为2的情况 ([8ff9024](https://github.com/Hyhello/utils/commit/8ff902479fad36a7f04bb9da89946c53f3b4272e))
+
+## [1.3.1](https://github.com/Hyhello/utils/compare/1.3.0...1.3.1) (2022-04-20)
+
+
+### Bug Fixes
+
+* 添加toSecret方法及添加types ([f43145d](https://github.com/Hyhello/utils/commit/f43145d2873319163217ea014c61a2178836f3be))
+
+## [1.3.0](https://github.com/Hyhello/utils/compare/1.2.8...1.3.0) (2022-04-20)
+
+
+### Bug Fixes
+
+* 调整细节 ([e745049](https://github.com/Hyhello/utils/commit/e7450497ecb2882b509a752efe1ceb45665969b2))
+
+
+### Features
+
+* toSecret 字符串转"*"涉密方法 ([44e21c2](https://github.com/Hyhello/utils/commit/44e21c2de41c07ead245d599921cdae483da4fc2))
+
+## [1.2.8](https://github.com/Hyhello/utils/compare/1.2.7...1.2.8) (2022-04-02)
+
+
+### Bug Fixes
+
+* 修改types 添加isString ([51ada0b](https://github.com/Hyhello/utils/commit/51ada0bbdf0295b4babe94c150d8de811645cd11))
+
+## [1.2.6](https://github.com/Hyhello/utils/compare/1.2.0...1.2.6) (2022-03-11)
+
+
+### Bug Fixes
+
+* 修复debounce,throttle首次触发执行两次问题 ([8c2b0b4](https://github.com/Hyhello/utils/commit/8c2b0b4b4d06abc6fda0e5267ed6f0b1050d6340))
+* 修改构建后文件注释版本问题 ([620b2eb](https://github.com/Hyhello/utils/commit/620b2ebb14fdf1764d552cc2ed1f520e67160269))
