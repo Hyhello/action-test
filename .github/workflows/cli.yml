@@ -24,15 +24,15 @@ jobs:
           validation_level: warn
           path: ./CHANGELOG.md
           
-      - name: Get Changelog
-        run: |
-          echo "${{ steps.changelog_reader.outputs.changes }}"
-      
-#      - name: Create Release
-#        uses: actions/create-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.github_token }}
-#        with:
-#          tag_name: ${{ steps.changelog.outputs.tag }}
-#          release_name: ${{ steps.changelog.outputs.tag }}
-#          body: ${{ steps.changelog.outputs.clean_changelog }}
+      - name: Create/update release
+        uses: ncipollo/release-action@v1
+        with:
+          # This pulls from the "Get Changelog Entry" step above, referencing it's ID to get its outputs object.
+          # See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          tag: ${{ steps.changelog_reader.outputs.version }}
+          name: Release ${{ steps.changelog_reader.outputs.version }}
+          body: ${{ steps.changelog_reader.outputs.changes }}
+          prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
+          draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
