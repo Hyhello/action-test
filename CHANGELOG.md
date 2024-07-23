@@ -1,4 +1,4 @@
-# 更新日志
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - v1.1 Italian translation.
 - v1.1 Polish translation.
 - v1.1 Ukrainian translation.
-- v1.1 Swedish translation (#590).
 
 ### Changed
 
@@ -34,7 +33,7 @@ description when links are shared are language-appropriate
 
 ### Added
 
-- v1.1 Arabic translation (#444).
+- Arabic translation (#444).
 - v1.1 French translation.
 - v1.1 Dutch translation (#371).
 - v1.1 Russian translation (#410).
