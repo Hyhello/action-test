@@ -4,23 +4,16 @@ on:
     tags:
       - "v*"
 
-  workflow_run:
-    workflows: ['Unit Test']
-    branches: [main]
-    types:
-      - completed
-
 jobs:
     release:
 #      if: startsWith(github.ref, 'refs/tags/')
-      if: ${{ github.event.workflow_run.conclusion == 'success' }}
       runs-on: ubuntu-latest
       steps:
-        - run: echo "Branch: ${{ github.ref }}"
         - name: Checkout code
           uses: actions/checkout@master
           with:
             fetch-depth: 0 # Fetch all tags
+
         - name: Create changelog text
           id: changelog
           uses: loopwerk/tag-changelog@v1
