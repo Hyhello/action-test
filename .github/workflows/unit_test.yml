@@ -1,1 +1,13 @@
+name: 'test'
 
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - 'v*'
+
+jobs:
+  test:
+    uses: .github/workflows/test.yml
+  
